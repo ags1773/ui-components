@@ -2,10 +2,14 @@ const path = require("path");
 
 const config = {
   mode: "development",
-  entry: path.resolve(__dirname, "src/index.js"),
+  entry: {
+    basket: path.resolve(__dirname, "src/components/basket"),
+    image: path.resolve(__dirname, "src/components/image"),
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "ui-components.js",
+    filename: "ui-components/[id].js",
+    // library: ["uiComponents", "[id]"],
     libraryTarget: "commonjs2",
   },
   module: {
