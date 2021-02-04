@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./basket.m.css";
+import CSSModules from "react-css-modules";
 
-export function Basket({ fruits, onClick }) {
+function BasketBase({ fruits, onClick }) {
   return (
-    <ul className={styles.basketWrapper}>
+    <ul styleName="basketWrapper">
       {fruits.map((fruit) => (
         <li key={fruit.id}>
           {fruit.name}
@@ -15,3 +16,5 @@ export function Basket({ fruits, onClick }) {
     </ul>
   );
 }
+
+export const Basket = CSSModules(BasketBase, styles);
