@@ -1,0 +1,6 @@
+.basketWrapper {
+  background-color: aqua;
+}
+.basketWrapper > li {
+  border: 1px solid black;
+}
