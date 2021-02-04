@@ -1,6 +1,6 @@
 import React from "react";
-import "./image.m.css";
+import styles from "./image.m.css";
 
 export function Image({ src, altText }) {
-  return <img src={src} alt={altText} className="image" />;
+  return <img src={src} alt={altText} className={styles.image} />;
 }
