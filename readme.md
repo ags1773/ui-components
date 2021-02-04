@@ -11,6 +11,7 @@ react is a peer dependancy. It's needed for development but npm doesn't install 
 With the current setup,
 
 ```js
-import { Basket } from "../../../ui-components/dist/ui-components/basket";
-import Image from "../../../ui-components/dist/ui-components/image";
+import { Basket } from "../../../ui-components/dist/basket";
+import Image from "../../../ui-components/dist/image";
+import { Basket, Image } from "../../../ui-components/dist";
 ```
