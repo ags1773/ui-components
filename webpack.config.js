@@ -2,14 +2,10 @@ const path = require("path");
 
 const config = {
   mode: "development",
-  entry: {
-    basket: path.resolve(__dirname, "src/components/basket"),
-    image: path.resolve(__dirname, "src/components/image"),
-  },
+  entry: () => getEntryPoints(),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "ui-components/[id].js",
-    // library: ["uiComponents", "[id]"],
+    filename: "[id].js",
     libraryTarget: "commonjs2",
   },
   module: {
@@ -31,3 +27,28 @@ const config = {
 };
 
 module.exports = config;
+
+function getEntryPoints() {
+  const componentPath = path.resolve(path.join(__dirname, "src/components"));
+  const bundlesArr = [
+    // This contains all components to be exported as separate bundles
+    {
+      name: "basket",
+      path: `${componentPath}/basket`,
+    },
+    {
+      name: "image",
+      path: `${componentPath}/image`,
+    },
+    {
+      name: "index",
+      path: `${componentPath}`,
+    },
+  ];
+
+  const acc = {};
+  bundlesArr.map((bundle) => {
+    acc[bundle.name] = bundle.path;
+  });
+  return new Promise((resolve) => resolve(acc));
+}
