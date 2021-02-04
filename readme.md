@@ -15,3 +15,10 @@ import { Basket } from "../../../ui-components/dist/basket";
 import Image from "../../../ui-components/dist/image";
 import { Basket, Image } from "../../../ui-components/dist";
 ```
+
+### Note:
+
+- now using CSS modules
+- check how css is imported and used in component
+- uses `css-loader`, you need to tell it to use modules by giving `modules: true` or pass an obj
+- `basketWrapper` has now become `<ul class="basket-m__basketWrapper___2xiDz">`
