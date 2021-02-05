@@ -2,7 +2,7 @@
   "name": "ui-components",
   "version": "1.0.0",
   "description": "UI components for react app",
-  "main": "dist/ui-components.js",
+  "main": "dist/index.js",
   "files": [
     "dist/*"
   ],
@@ -26,9 +26,9 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
-    "css-loader": "^5.0.1",
+    "babel-plugin-react-css-modules": "^5.2.6",
+    "css-loader": "^3.6.0",
     "react": "^17.0.1",
-    "react-css-modules": "^4.7.11",
     "react-dom": "^17.0.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.19.0",

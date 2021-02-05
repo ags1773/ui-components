@@ -1,5 +1,7 @@
 .basketWrapper {
+  color: red;
   background-color: aqua;
+  background-image: url("https://images.unsplash.com/photo-1567225591450-06036b3392a6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
 }
 .basketWrapper > li {
   border: 1px solid black;
