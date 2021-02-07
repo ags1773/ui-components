@@ -1,11 +1,11 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  mode: "development",
   entry: () => getEntryPoints(),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[id].js",
+    filename: "[id]/index.js",
     libraryTarget: "commonjs2",
   },
   module: {
@@ -13,7 +13,7 @@ const config = {
       {
         test: /\.css$/,
         use: [
-          { loader: "style-loader" },
+          { loader: MiniCssExtractPlugin.loader },
           {
             loader: "css-loader",
             options: {
@@ -34,6 +34,11 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[id]/styles.css",
+    }),
+  ],
 };
 
 module.exports = config;
@@ -51,7 +56,7 @@ function getEntryPoints() {
       path: `${componentPath}/image`,
     },
     {
-      name: "index",
+      name: "all",
       path: `${componentPath}`,
     },
   ];
