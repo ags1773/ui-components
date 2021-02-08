@@ -5,9 +5,8 @@ const config = {
   entry: () => getEntryPoints(),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: (pathData) => {
-      return pathData.chunk.name === "main" ? "index.js" : "[name]/index.js";
-    },
+    filename: (pathData) =>
+      pathData.chunk.name === "main" ? "index.js" : "[name]/index.js",
     libraryTarget: "commonjs2",
   },
   module: {

@@ -1,5 +1,5 @@
 {
-  "name": "ui-components",
+  "name": "@ags1773/ui-components",
   "version": "1.0.0",
   "description": "UI components for react app",
   "main": "dist/index.js",
