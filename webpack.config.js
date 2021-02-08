@@ -5,7 +5,9 @@ const config = {
   entry: () => getEntryPoints(),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[id]/index.js",
+    filename: (pathData) => {
+      return pathData.chunk.name === "main" ? "index.js" : "[name]/index.js";
+    },
     libraryTarget: "commonjs2",
   },
   module: {
@@ -36,7 +38,11 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[id]/styles.css",
+      filename: (pathData) => {
+        return pathData.chunk.name === "main"
+          ? "styles.css"
+          : "[name]/styles.css";
+      },
     }),
   ],
 };
@@ -56,7 +62,7 @@ function getEntryPoints() {
       path: `${componentPath}/image`,
     },
     {
-      name: "all",
+      name: "main",
       path: `${componentPath}`,
     },
   ];
