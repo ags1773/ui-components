@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && npx webpack --mode development",
-    "build:prod": "rm -rf dist && npx webpack --mode production"
+    "build:prod": "rm -rf dist && npx webpack --mode production",
+    "analyze": "rm -rf dist && NODE_ENV=production ANALYZE_STATS=true npx webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,7 @@
   "license": "ISC",
   "bugs": {},
   "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -31,9 +31,9 @@
     "css-loader": "^3.6.0",
     "mini-css-extract-plugin": "^1.3.5",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.19.0",
+    "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "^4.4.0"
   }
 }
