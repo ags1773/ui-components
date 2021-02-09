@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 npm run build:prod
-cp ./package.json ./dist/
+node ./build-utils.js
 cd ./dist
 
 if [ $1 = "beta" ]; then

@@ -1,11 +1,8 @@
 {
   "name": "@ags1773/ui-components",
-  "version": "1.0.1",
+  "version": "1.0.2-test.0",
   "description": "UI components for react app",
-  "main": "index.js",
-  "files": [
-    "*"
-  ],
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && npx webpack --mode development",
