@@ -1,16 +1,15 @@
-Sample UI library exporting styled react components.
-Sandbox for learning how to export libraries using webpack
+### What:
+Library exporting styled react UI components
 
-## IMPORTANT:
+### Why:
+Sandbox to play around with
+- bundlers, plugins
+- treeshaking. What works, what doesn't
+- cjs, esm exports
+- ... lots more
+## NOTE:
 
 - locked css-loader to v3.x.x because of [this](https://github.com/gajus/babel-plugin-react-css-modules/issues/291) issue. Took awfully long to debug this!
-
-## Publishing:
-
-- DO NOT RUN `npm publish` DIRECTLY!! Run the publish script
-- This ensures users can do this > `import "@ags1773/ui-components/basket/styles.css"` and don't have to do this > `import "@ags1773/ui-components/dist/basket/styles.css"`. [Read more](https://blog.izs.me/2013/02/why-no-directorieslib-in-node-the-less-snarky)
-- Run the publish executable file `./publish` for prod publish
-- To publish a beta, pass 1st argument as beta `./publish beta`
 
 ## Extract CSS:
 
