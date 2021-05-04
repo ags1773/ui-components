@@ -7,6 +7,7 @@
   ],
   "main": "dist/cjs/index.js",
   "scripts": {
+    "prepublishOnly": "./bin-dev-scripts/standard-version-release.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && NODE_ENV=development npx webpack",
     "build:prod": "rm -rf dist && npx webpack"
@@ -29,6 +30,7 @@
     "babel-plugin-react-css-modules": "^5.2.6",
     "css-loader": "^3.6.0",
     "react": "^17.0.1",
+    "standard-version": "^9.2.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.19.0",
     "webpack-cli": "^4.4.0"
