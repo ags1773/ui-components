@@ -6,11 +6,14 @@
     "/dist"
   ],
   "main": "dist/cjs/index.js",
+  "module": "dist/esm/components/index.js",
   "scripts": {
     "prepublishOnly": "./bin-dev-scripts/standard-version-release.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && NODE_ENV=development npx webpack",
-    "build:prod": "rm -rf dist && npx webpack"
+    "build:cjs": "npx webpack",
+    "build:esm": "npx babel src --out-dir dist/esm",
+    "build": "rm -rf dist && NODE_ENV=development npm run build:cjs && npm run build:esm",
+    "build:prod": "rm -rf dist && npm run build:cjs && npm run build:esm"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,7 @@
     "react": "^17.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.16",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
