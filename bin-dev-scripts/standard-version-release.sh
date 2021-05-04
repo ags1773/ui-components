@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 npm install
+npm run build:prod
 git diff --quiet
 
 BRANCH=$(git symbolic-ref --short HEAD)
