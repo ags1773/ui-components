@@ -10,8 +10,8 @@
   "scripts": {
     "prepublishOnly": "./bin-dev-scripts/standard-version-release.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:cjs": "npx webpack",
-    "build:esm": "npx babel src --out-dir dist/esm",
+    "build:cjs": "BUILD_MODE=cjs npx webpack",
+    "build:esm": "BUILD_MODE=esm npx webpack && npx babel src --out-dir dist/esm",
     "build": "rm -rf dist && NODE_ENV=development npm run build:cjs && npm run build:esm",
     "build:prod": "rm -rf dist && npm run build:cjs && npm run build:esm"
   },
@@ -33,6 +33,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-react-css-modules": "^5.2.6",
     "css-loader": "^3.6.0",
+    "mini-css-extract-plugin": "^1.6.0",
     "react": "^17.0.1",
     "standard-version": "^9.2.0",
     "style-loader": "^2.0.0",
