@@ -1,6 +1,6 @@
 {
   "name": "@ags1773/ui-components",
-  "version": "1.0.2-test.2",
+  "version": "1.0.2-test.3",
   "description": "UI components for react app",
   "files": [
     "/dist"
